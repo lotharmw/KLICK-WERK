@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- GSAP CSS (falls benötigt) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="swiper-container swiper-full-parallax">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide" data-swiper-autoplay="5000">
+          <div class="swiper-slide__inner">
+            <div
+              class="slide-image"
+              data-swiper-parallax="100%"
+              data-swiper-parallax-scale="1.15"
+              style="background-image: url('images/slide-1.jpg')"
+            ></div>
+
+            <div class="slide-title-container" data-swiper-parallax="100%">
+              <div class="logo"><img src="images/logo.png" alt="Logo" /></div>
+              <div class="slide-info-left">
+                <div class="slider-nav">
+                  <div class="swiper-button-prev">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="11,18 16,13 21,18" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="swiper-button-next">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="21,14 16,19 11,14" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="slide-title">
+                  <div class="slide-cat">Websites, Shops & SEO</div>
+                  <h3>Web&shy;entwicklung</h3>
+                  <a href="#" class="slide-link" target="_self">
+                    Zum Angebot
+                  </a>
+                </div>
+              </div>
+              <div class="ms-slide-count">
+                <span>01</span>
+                <span class="total-count"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide" data-swiper-autoplay="5000">
+          <div class="swiper-slide__inner">
+            <div
+              class="slide-image"
+              data-swiper-parallax="100%"
+              data-swiper-parallax-scale="1.15"
+              style="background-image: url('images/slide-2.jpg')"
+            ></div>
+
+            <div class="slide-title-container" data-swiper-parallax="100%">
+              <div class="logo"><img src="images/logo.png" alt="Logo" /></div>
+              <div class="slide-info-left">
+                <div class="slider-nav">
+                  <div class="swiper-button-prev">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="11,18 16,13 21,18" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="swiper-button-next">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="21,14 16,19 11,14" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="slide-title">
+                  <div class="slide-cat">
+                    Foto-, Video- & Social Media Content
+                  </div>
+                  <h3>Content Creation</h3>
+                  <a href="#" class="slide-link" target="_self">
+                    Zum Angebot
+                  </a>
+                </div>
+              </div>
+              <div class="ms-slide-count">
+                <span>02</span>
+                <span class="total-count"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide" data-swiper-autoplay="5000">
+          <div class="swiper-slide__inner">
+            <div
+              class="slide-image"
+              data-swiper-parallax="100%"
+              data-swiper-parallax-scale="1.15"
+              style="background-image: url('images/slide-3.webp')"
+            ></div>
+
+            <div class="slide-title-container" data-swiper-parallax="100%">
+              <div class="logo"><img src="images/logo.png" alt="Logo" /></div>
+              <div class="slide-info-left">
+                <div class="slider-nav">
+                  <div class="swiper-button-prev">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="11,18 16,13 21,18" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="swiper-button-next">
+                    <svg viewBox="0 0 36 36">
+                      <polyline class="st0" points="21,14 16,19 11,14" />
+                      <path
+                        class="st0"
+                        d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="slide-title">
+                  <div class="slide-cat">KI-Generierte Produktbilder</div>
+                  <h3>KI Content</h3>
+                  <a href="#" class="slide-link" target="_self">
+                    Zum Angebot
+                  </a>
+                </div>
+              </div>
+              <div class="ms-slide-count">
+                <span>03</span>
+                <span class="total-count"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-counter" data-counter="/ 03"></div>
+
+      <div class="scroll-sign">
+        <span></span>
+        <div>Scroll</div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

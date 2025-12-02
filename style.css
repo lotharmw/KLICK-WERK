@@ -1,0 +1,363 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+  background-color: #202020;
+}
+
+/* Swiper Container */
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #202020;
+  overflow: hidden; /* Wichtig für vertical slider */
+}
+.swiper-wrapper {
+  height: 100vh;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.swiper-slide__inner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* Slide Image */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+}
+.slide-image::after {
+  background-color: #00000080;
+}
+
+.slide-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Slide Title Container */
+.slide-title-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  width: calc(100% - 60px);
+  height: 100%;
+  padding: 30px;
+}
+
+.slide-info-left {
+  position: relative;
+  display: flex;
+}
+
+/* Logo */
+.logo {
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.logo img {
+  width: 100%;
+}
+
+/* Slider Navigation */
+.slider-nav {
+  display: flex;
+  margin-left: -2pt;
+  margin-right: 50px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;
+  top: 4pt;
+  width: 64px;
+  height: 64px;
+  opacity: 0.5;
+  transition: opacity 250ms ease;
+  outline: 0;
+  margin-top: 0;
+  background-image: none;
+  cursor: pointer;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-next .st0,
+.swiper-button-prev .st0 {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.swiper-button-next:after,
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-prev {
+  margin-right: 16px;
+}
+
+/* Slide Title */
+.slide-title {
+  position: relative;
+  z-index: 1;
+}
+
+.slide-cat {
+  color: #fff;
+  position: absolute;
+  bottom: calc(100% + 20px);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+}
+
+.slide-title h3 {
+  color: #fff;
+  font-size: calc(6vw + 1vw);
+  line-height: 1em;
+  font-weight: 900;
+  max-width: 10em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: "Bebas Neue";
+}
+
+/* Slide Link */
+.slide-link {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 24px 32px;
+  border-radius: 50px;
+
+  /* Wir bauen den Verlauf etwas breiter und mit Highlight in der Mitte */
+  background-image: linear-gradient(
+    90deg,
+    hsl(233deg 12% 15%) 0%,
+    hsl(233deg 21% 16%) 15%,
+    hsl(232deg 29% 17%) 30%,
+    hsl(230deg 80% 55%) 50%,
+    /* hellere, leuchtende Mitte */ hsl(232deg 29% 17%) 70%,
+    hsl(233deg 21% 16%) 85%,
+    hsl(233deg 12% 15%) 100%
+  );
+
+  /* WICHTIG für den Slide-Effekt */
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+
+  transition: transform 0.2s ease-out;
+}
+
+/* Bewegung des Gradients von links → rechts → links */
+@keyframes slide-link-gradient-move {
+  0% {
+    background-position: 0% 50%; /* entspricht "Ursprungszustand" */
+  }
+  50% {
+    background-position: 100% 50%; /* Highlight in der Mitte wandert durch */
+  }
+  100% {
+    background-position: 0% 50%; /* wieder wie am Anfang */
+  }
+}
+
+/* Animation nur, solange Hover aktiv ist */
+.slide-link:hover {
+  animation: slide-link-gradient-move 1s ease-in-out;
+  transform: translateY(-1px);
+}
+
+/* Slide Counter */
+.ms-slide-count {
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 60px;
+  line-height: 1;
+  z-index: 10;
+  display: flex;
+  margin-top: 6pt;
+  margin-left: auto;
+}
+
+.ms-slide-count span:first-child {
+  margin-top: -2pt;
+}
+
+.total-count {
+  font-weight: 900;
+  font-size: 28px;
+  opacity: 0.5;
+  min-width: 40px;
+  margin-left: 8px;
+}
+
+/* Scroll Sign */
+.scroll-sign {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 9.5vh;
+  right: -4pt;
+  z-index: 1;
+  transform: translateY(0) rotate(-90deg);
+  transform-origin: top center;
+  letter-spacing: 1pt;
+  color: #fff;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-sign::before {
+  display: block;
+  width: 55px;
+  height: 1px;
+  margin-right: 25px;
+  background-color: #fff;
+  content: "";
+}
+
+.scroll-sign span {
+  display: block;
+  width: 32px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
+  border-radius: 300px;
+  border: 1px solid #fff;
+}
+
+.scroll-sign span::before {
+  width: 8px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  content: "";
+}
+
+.scroll-sign div {
+  margin-bottom: 1pt;
+}
+
+/* Swiper Counter */
+.swiper-counter {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+/* Scroll Lock Overlay */
+.scroll-lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  pointer-events: none;
+}
+
+/* Initial opacity for clip-path animations */
+.swiper-slide-nth-next-2 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure slides have proper positioning for clip-path */
+.swiper-slide {
+  will-change: clip-path;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-title h3 {
+    font-size: 16vw;
+    margin-bottom: 12pt;
+  }
+
+  .slider-nav {
+    display: none;
+  }
+
+  .ms-slide-count {
+    margin-right: auto;
+    margin-left: 0;
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .slide-link {
+    margin-top: 24px;
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .scroll-sign {
+    display: none;
+  }
+
+  .slide-cat {
+    font-size: 10pt;
+  }
+  .logo {
+    left: 30px;
+    width: 250px;
+  }
+}
